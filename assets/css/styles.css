@@ -474,9 +474,24 @@ ul.breadcrumbs {
     padding-left: 25px;
 }
 
+.user-profile .dropdown-menu button {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #8a8a8a;
+  letter-spacing: 0;
+  font-weight: 500;
+  padding: 4px 120px;
+  padding-left: 25px;
+}
+
 .user-profile .dropdown-menu a:hover {
     background: #f8f9fa;
     color: #4B44B5;
+}
+
+.user-profile .dropdown-menu button:hover {
+  background: #f8f9fa;
+  color: #4B44B5;
 }
 
 /*-------------------- END Page Title Area -------------------*/
@@ -631,35 +646,9 @@ ul.breadcrumbs {
 
 /*-------------------- 19. Table Basic ------------------- */
 
-.single-table .table {
-    margin-bottom: 0;
-}
-
-table tr th {
-    border-bottom: none;
-}
-
-table tr th,
-table tr td {
-    border-top: 1px solid rgba(120, 130, 140, 0.13) !important;
-}
-
-table tr td [class^="ti-"] {
-    cursor: pointer;
-}
-
-.table-bordered td,
-.table-bordered th {
-    border: 1px solid rgba(120, 130, 140, 0.13) !important;
-}
-
-.status-p {
-    color: #fff;
-    padding: 0px 20px 1px;
-    border-radius: 20px;
-    display: inline-block;
-    text-transform: capitalize;
-    vertical-align: middle;
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
 }
 
 /*-------------------- END Table Basic ------------------- */
@@ -667,62 +656,7 @@ table tr td [class^="ti-"] {
 
 /*-------------------- 20. Datatable ------------------- */
 
-div.dataTables_wrapper div.dataTables_length select {
-    width: 76px;
-    margin: 0 10px;
-}
 
-/* datatable-primary */
-
-.datatable-primary thead {
-    background: #4336fb;
-    color: #fff;
-}
-
-.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-    border: none;
-    background: transparent;
-}
-
-.dataTables_wrapper .dataTables_paginate .paginate_button {
-    padding: 0;
-    border: none;
-    margin-top: 20px;
-}
-
-table.dataTable.no-footer {
-    border-bottom: 1px solid rgba(120, 130, 140, 0.13) !important;
-}
-
-table.dataTable thead th,
-table.dataTable thead td {
-    border-bottom-color: transparent;
-}
-
-.datatable-primary .dataTables_paginate .page-item.active .page-link,
-.datatable-primary .dataTables_paginate .page-item .page-link:hover {
-    background-color: #4336fb;
-    border-color: #4336fb;
-    color: #fff;
-}
-
-.datatable-primary .dataTables_paginate .page-link {
-    color: #4336fb;
-    border: 1px solid #4336fb;
-}
-
-.datatable-primary .dataTables_paginate .paginate_button.disabled,
-.datatable-primary .dataTables_paginate .paginate_button.disabled:hover,
-.datatable-primary .dataTables_paginate .paginate_button.disabled:active {
-    color: #4336fb!important;
-    border: none;
-}
-
-.datatable-primary .dataTables_paginate .page-item.disabled .page-link {
-    color: #9f98f7;
-    background-color: #f9f9f9;
-    border-color: #c9c6f5;
-}
 
 
 /*-------------------- 23. Login ------------------- */

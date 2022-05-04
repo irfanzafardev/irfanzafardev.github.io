@@ -54,9 +54,17 @@
 			<!-- sidebar menu area start -->
 			<div class="sidebar-menu">
 				<div class="sidebar-header">
-					<div class="logo mt-2">
-						<a href="index.html" class="text-dark">Aplikasi Ujian SV IPB</a>
+					<div class="logo mb-3 d-flex justify-content-center">
+						<img
+							src="./assets/images/logo/ipb.png"
+							class="d-block"
+							alt=""
+							width="60px"
+						/>
 					</div>
+					<a href="index.html" class="text-dark text-center d-block"
+						>Aplikasi Ujian SV IPB</a
+					>
 				</div>
 				<div class="main-menu">
 					<div class="menu-inner">
@@ -141,11 +149,11 @@
 									width="20px"
 								/>
 								<h4 class="user-name dropdown-toggle" data-toggle="dropdown">
-									Nama Lengkap <i class="fa fa-angle-down"></i>
+									Nama Lengkap | Aktor <i class="fa fa-angle-down"></i>
 								</h4>
 								<div class="dropdown-menu">
 									<a class="dropdown-item" href="#">Change Password</a>
-									<a class="dropdown-item" href="#">Log Out</a>
+									<button class="dropdown-item">Log Out</button>
 								</div>
 							</div>
 						</div>
@@ -195,6 +203,59 @@
 						<div class="col-12 mt-5">
 							<div class="card">
 								<div class="card-body">
+									<h4 class="header-title">Jadwal Ujian</h4>
+									<div class="table-responsive">
+										<table class="table table-borderless">
+											<thead>
+												<tr>
+													<th class="border-0" scope="col">No</th>
+													<th class="border-0" scope="col">Jadwal Ujian</th>
+													<th class="border-0" scope="col">Mata Kuliah</th>
+													<th class="border-0" scope="col">Tanggal</th>
+													<th class="border-0" scope="col">Jam Mulai</th>
+													<th class="border-0" scope="col">Jam Selesai</th>
+													<th class="border-0" scope="col">Keterangan</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<th class="border-0" scope="row">1</th>
+													<td class="border-0">-</td>
+													<td class="border-0">-</td>
+													<td class="border-0">-</td>
+													<td class="border-0">-</td>
+													<td class="border-0">-</td>
+													<td class="border-0">-</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- data table end -->
+					</div>
+
+					<div class="row">
+						<!-- data table start -->
+						<div class="col-12 mt-5">
+							<div class="card">
+								<div class="card-body">
+									<h4 class="header-title">Jadwal Ujian</h4>
+									<figure class="highcharts-figure">
+										<div id="container"></div>
+									</figure>
+								</div>
+							</div>
+						</div>
+						<!-- data table end -->
+					</div>
+
+					<div class="row">
+						<!-- data table start -->
+						<div class="col-12 mt-5">
+							<div class="card">
+								<div class="card-body">
 									<h4 class="header-title">DataTable</h4>
 									<a
 										href="input-form.html"
@@ -202,6 +263,8 @@
 									>
 										Tambah Data
 									</a>
+									<!-- <i class="fa fa-check text-danger"></i> -->
+
 									<div class="table-responsive">
 										<table id="example" class="table" style="width: 100%">
 											<thead>
@@ -706,6 +769,11 @@
 		<!-- <script src="assets/js/vendor/jquery-2.2.4.min.js"></script> -->
 
 		<script
+			src="https://kit.fontawesome.com/b3b03a4327.js"
+			crossorigin="anonymous"
+		></script>
+
+		<script
 			src="https://code.jquery.com/jquery-3.6.0.js"
 			integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 			crossorigin="anonymous"
@@ -717,6 +785,13 @@
 		<script src="assets/js/metisMenu.min.js"></script>
 		<script src="assets/js/jquery.slimscroll.min.js"></script>
 		<script src="assets/js/jquery.slicknav.min.js"></script>
+
+		<!-- Highcharts -->
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/series-label.js"></script>
+		<script src="https://code.highcharts.com/modules/exporting.js"></script>
+		<script src="https://code.highcharts.com/modules/export-data.js"></script>
+		<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 		<!-- Start datatable js -->
 		<script
@@ -736,6 +811,69 @@
 		<script>
 			$(document).ready(function () {
 				$("#example").DataTable();
+			});
+
+			Highcharts.chart("container", {
+				title: {
+					text: "Grafik Pelanggaran",
+				},
+
+				subtitle: {
+					text: "Subtitle",
+				},
+
+				yAxis: {
+					title: {
+						text: "Text",
+					},
+				},
+
+				xAxis: {
+					title: {
+						text: "Date",
+						style: { color: "#000" },
+					},
+					categories: [1, 2, 3, 4, 5, 6, 7, 8],
+					labels: {
+						style: {
+							color: "#000",
+						},
+					},
+				},
+
+				legend: {
+					layout: "vertical",
+					align: "right",
+					verticalAlign: "middle",
+				},
+
+				series: [
+					{
+						name: "Pelanggaran",
+						data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175],
+					},
+					// {
+					// 	name: "Manufacturing",
+					// 	data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434],
+					// },
+				],
+
+				responsive: {
+					rules: [
+						{
+							condition: {
+								maxWidth: 500,
+							},
+							chartOptions: {
+								legend: {
+									layout: "horizontal",
+									align: "center",
+									verticalAlign: "bottom",
+								},
+							},
+						},
+					],
+				},
 			});
 		</script>
 	</body>
